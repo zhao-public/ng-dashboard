@@ -30,6 +30,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: NPM Install
+        uses: bahmutov/npm-install@v1.6.0
+        with:
+          install-command: npm ci --legacy-peer-deps
+      - name: Build
+        run: npm run release
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
