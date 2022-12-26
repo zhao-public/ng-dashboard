@@ -35,14 +35,14 @@ jobs:
         with:
           install-command: npm ci --legacy-peer-deps
       - name: Build
-        run: npm run release
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '.'
+          path: './dist/ng-dashboard'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
